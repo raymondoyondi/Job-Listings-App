@@ -1,0 +1,19 @@
+<div>
+  <button
+    class="filter-tablets"
+    *ngFor="let languages of currentJob.languages; let i = index"
+    (click)="sendToTag($event)"
+  >
+    {{ languages }}
+  </button>
+  <button
+    *ngIf="currentJob.role"
+    class="filter-tablets"
+    (click)="sendToTag($event)"
+  >
+    {{ currentJob.role }}
+  </button>
+  <button class="filter-tablets" (click)="sendToTag($event)">
+    {{ currentJob.level }}
+  </button>
+</div>
