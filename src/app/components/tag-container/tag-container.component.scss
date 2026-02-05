@@ -1,0 +1,85 @@
+@use "src/colours";
+
+.tag-container {
+  width: 80%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 6px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 2px 10px colours.$desat-dark-cyan;
+  position: relative;
+  z-index: 2;
+  margin-top: -2.4375rem;
+
+  @media screen and (min-width: 992px) {
+    width: 960px;
+  }
+
+  .buttons-container {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .image-wrapper {
+        padding: 0.4688rem;
+        background-color: colours.$desat-dark-cyan;
+        border-radius: 0 6px 6px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+
+        &:hover {
+          background-color: colours.$vdark-grayish-cyan;
+        }
+      }
+    }
+  }
+
+  .clear-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    //text-decoration: underline;
+    width: 20%;
+
+    span {
+      font-weight: bold;
+      color: colours.$dark-grayish-cyan;
+    }
+
+    &:hover,
+    span:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      color: colours.$desat-dark-cyan;
+    }
+  }
+}
+
+button {
+  appearance: none;
+  padding: 0.5rem 1rem;
+  border-style: none;
+  border-radius: 6px;
+  outline: none;
+  color: colours.$desat-dark-cyan;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button-container {
+  background-color: colours.$filter-tablets;
+  border-radius: 6px;
+}
