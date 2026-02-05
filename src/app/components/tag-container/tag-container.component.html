@@ -1,0 +1,17 @@
+<div class="tag-container" *ngIf="currentTags.length !== 0">
+  <div class="buttons-container">
+    <div
+      class="button-container"
+      *ngFor="let lang of currentTags; let i = index"
+    >
+      <button>{{ lang }}</button>
+      <div class="image-wrapper" (click)="removeFromTag(i)">
+        <img class="delete-button" [src]="'./assets/images/icon-remove.svg'" />
+      </div>
+    </div>
+  </div>
+
+  <div class="clear-container">
+    <span (click)="clearTags()">Clear</span>
+  </div>
+</div>
