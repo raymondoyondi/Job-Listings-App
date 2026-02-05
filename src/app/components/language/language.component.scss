@@ -1,0 +1,18 @@
+@use "src/colours";
+
+.filter-tablets {
+  padding: 0.5rem 1rem;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+  appearance: none;
+  border-style: none;
+  background-color: colours.$filter-tablets;
+  color: colours.$desat-dark-cyan;
+
+  &:hover {
+    background-color: colours.$desat-dark-cyan;
+    color: colours.$filter-tablets;
+    cursor: pointer;
+  }
+}
