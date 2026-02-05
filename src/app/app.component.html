@@ -1,0 +1,63 @@
+<header>
+  <picture>
+    <source
+      media="(min-width: 500px)"
+      [srcset]="'assets/images/bg-header-desktop.svg'"
+    />
+    <img [src]="'assets/images/bg-header-mobile.svg'" alt="Header image" />
+  </picture>
+</header>
+
+<app-tag-container></app-tag-container>
+
+<main *ngIf="jobs">
+  <div
+    *ngFor="let job of JobsCopy"
+    class="container card"
+    [ngClass]="{ 'new': job.new || job.featured, 'old': !job.new }"
+  >
+    <div class="avatar">
+      <img [src]="job.logo" [alt]="job.company" />
+    </div>
+
+    <div class="role-stats">
+
+      <div class="wrapper">
+      <div class="role-features">
+        <h4 class="job-company">{{ job.company }}</h4>
+
+        <div class="role-features">
+          <span class="role-features__new" *ngIf="job.new">{{
+            "new!" | uppercase
+          }}</span>
+          <span class="role-features__featured" *ngIf="job.featured">{{
+            "featured" | uppercase
+          }}</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="job-position">{{ job.position }}</h3>
+
+        <div class="job-details">
+          <ul>
+            <li>{{ job.postedAt }}</li>
+            <li>{{ job.contract }}</li>
+            <li>{{ job.location }}</li>
+          </ul>
+        </div>
+
+        <hr />
+      </div>
+    </div>
+
+        <div class="details">
+          <app-language [currentJob]="job"></app-language>
+        </div>
+    </div>
+  </div>
+
+  <div class="container attribution">
+    <h4>Coded by <a href="https://github.com/raymondoyondi/" target="_blank">Raymond Oyondi.</a></h4>
+</div>
+</main>
